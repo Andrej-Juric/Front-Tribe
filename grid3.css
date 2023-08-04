@@ -1,0 +1,31 @@
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 10vh 30vh 10vh;
+  grid-column-gap: 0px;
+  grid-row-gap: 5px;
+}
+
+.div1 {
+  grid-area: 1 / 1 / 2 / 3;
+  display: grid;
+}
+.div2 {
+  grid-area: 1 / 3 / 2 / 6;
+}
+.div3 {
+  grid-area: 2 / 1 / 3 / 4;
+}
+.div4 {
+  grid-area: 2 / 4 / 3 / 6;
+}
+.div5 {
+  grid-area: 3 / 1 / 4 / 6;
+  max-width: 40vh;
+}
+
+.navigation {
+  display: flex;
+  direction: row;
+  justify-content: space-evenly;
+}

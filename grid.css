@@ -1,0 +1,75 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(5, 20vh);
+  grid-template-rows: repeat(3, 20vh);
+  grid-gap: 30px;
+  /*border: 2px solid rgb(0, 0, 0);*/
+  justify-content: center;
+}
+
+.div1 {
+  background-color: #444;
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+
+.div2 {
+  background-color: rgb(112, 23, 23);
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+  grid-area: span;
+}
+
+.container2 {
+  display: grid;
+  /* grid-template-columns: repeat(5, 20vh);
+  grid-template-rows: auto; */
+  grid-gap: 30px;
+  grid-template-areas:
+    "header header header header header"
+    "main main . . sidebar"
+    "footer footer footer footer footer";
+  justify-content: center;
+}
+
+.item-1 {
+  grid-area: header;
+  background-color: rgb(5, 133, 111);
+  color: #fff;
+  border-radius: 5px;
+  padding: 50px;
+  font-size: 150%;
+  width: 100%;
+}
+.item-1 ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+.item-2 {
+  grid-area: main;
+  background-color: rgb(5, 133, 111);
+  color: #fff;
+  border-radius: 5px;
+  padding: 70px;
+  font-size: 150%;
+}
+.item-3 {
+  grid-area: sidebar;
+  background-color: rgb(5, 133, 111);
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
+.item-4 {
+  grid-area: footer;
+  background-color: rgb(5, 133, 111);
+  color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+  font-size: 150%;
+}
