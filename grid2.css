@@ -77,14 +77,22 @@ nav ul {
   background-color: white;
 }
 
-.item-type-a {
+/* .item-type-a {
   padding-top: 45%;
+  background-color: #2ecc71;
+} */
+
+.item-type-b {
   background-color: #2ecc71;
 }
 
-.item-type-b {
-  padding-top: 45%;
-  background-color: #2ecc71;
+.item-type-b img {
+  width: 100%;
+}
+
+.item-type-a img {
+  width: 100%;
+  border-radius: 30px;
 }
 
 .item-inner {
