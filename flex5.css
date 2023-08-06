@@ -1,4 +1,4 @@
-button {
+/* button {
   background-color: red;
   border: 0;
   color: white;
@@ -24,4 +24,20 @@ button:hover {
     background-color: blue;
     border-radius: 30px;
   }
+} */
+.button {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #d5d5d5;
+  background-image: linear-gradient(#eee, #ddd);
+  font: 700 13px/18px Helvetica, arial;
+}
+.button--state-success {
+  color: green;
+}
+
+.button--state-danger {
+  background: red;
+  color: white;
 }
