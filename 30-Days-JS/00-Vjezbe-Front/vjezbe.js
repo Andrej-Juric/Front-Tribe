@@ -628,7 +628,7 @@ const personAccount = {
     return this.expenses.push(expense);
   },
   accountBalance: function () {
-    personAccount.balance = this.incomes - this.expenses;
+    this.balance = this.incomes - this.expenses;
     console.log(this);
     return this.balance;
   },

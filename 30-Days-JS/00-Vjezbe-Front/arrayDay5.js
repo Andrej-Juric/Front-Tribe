@@ -503,3 +503,53 @@ function calculatePrice(total, pdv, discount) {
 
 const totalPrice = calculatePrice(100, 25, 10);
 console.log(totalPrice);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const eurToUsd = 1.1;
+
+const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});
+console.log(movements);
+console.log(movementsUSD);
+
+const movementsUSDfor = [];
+for (const mov of movements) movementsUSDfor.push(mov * eurToUsd);
+console.log(movementsUSDfor);
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+console.log(movements);
+console.log(deposits);
+
+let depositsFor = [];
+for (const mov of movements) {
+  if (mov > 0) {
+    depositsFor.push(mov);
+  }
+}
+console.log(depositsFor);
+
+const withdrawals = movements.filter((mov) => mov < 0);
+console.log(withdrawals);
+
+// reduce
+console.log(movements);
+
+let balance = movements.reduce(function (acc, curr, index, arr) {
+  console.log(`Iteration ${index}: ${acc}. Curr: ${curr}`);
+  return acc + curr;
+}, 0);
+console.log(balance);
+
+// Maximum value
+let max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    return acc;
+  } else {
+    return mov;
+  }
+});
+console.log(max);
