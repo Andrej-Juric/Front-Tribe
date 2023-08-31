@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  width: 606px;
+  margin: 0 auto;
+  z-index: 0;
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  width: 199px;
+  display: inline-block;
+  background-color: #5e6b7f;
+  color: white;
+  text-align: center;
+  transition: 0.25s ease;
+  border: none;
+  padding: 10px;
+  border-radius: 12px 12px 0 0;
+}
+
+p {
+  margin-top: 300px;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.tab {
+  border: 1px #5e6b7f solid;
+}

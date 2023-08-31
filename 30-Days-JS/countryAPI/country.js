@@ -20,11 +20,11 @@ async function getCountryData() {
     if (!response.ok) {
       throw new Error("Network response was not ok");
     }
-    const data = await response.json();
+    const [country] = await response.json();
 
-    showCountryDetails(data[0]);
-    aboutCountry(data[0]);
-    return data;
+    showCountryDetails(country);
+    aboutCountry(country);
+    // return data;
   } catch (error) {
     console.error("Error fetching data:", error);
   }
@@ -35,44 +35,13 @@ async function getCountryData() {
 //   li.textContent = text;
 // };
 
-btnSearch.addEventListener("click", () => {
-  getCountryData();
-});
-
 const showCountryDetails = (country) => {
   console.log(country);
-
-  let title = document.createElement("h1");
-  title.textContent = `Country Details for ${country.name.official}`;
-  container.appendChild(title);
-
-  let image = document.createElement("img");
-  image.src = country.flags.png;
-  container.appendChild(image);
-
-  let capitalTitle = document.createElement("h2");
-  capitalTitle.textContent = "Capital City";
-  container.appendChild(capitalTitle);
-
-  let capital = document.createElement("p");
-  capital.textContent = country.capital;
-  container.appendChild(capital);
-
-  let populationTitle = document.createElement("h2");
-  populationTitle.textContent = "Population";
-  container.appendChild(populationTitle);
-
-  let population = document.createElement("p");
-  population.textContent = country.population;
-  container.appendChild(population);
-
-  let languageTitle = document.createElement("h2");
-  languageTitle.textContent = "Language";
-  container.appendChild(languageTitle);
-
-  let language = document.createElement("p");
-  language.textContent = Object.values(country.languages);
-  container.appendChild(language);
+  Object.keys(country).forEach((key) => {
+    if (typeof country[key] === "string") {
+      appendElement("p", country[key], key, "h1");
+    }
+  });
 };
 
 const aboutCountry = (detail) => {
@@ -104,3 +73,22 @@ const aboutCountry = (detail) => {
   } is a place where past and present coexist harmoniously, offering travelers and residents alike a vibrant and captivating experience.`;
   container.appendChild(detailInfo);
 };
+
+const appendElement = (heading, content, title, titleHeading) => {
+  let createElement = document.createElement(heading);
+  let createElement2 = document.createElement(titleHeading);
+  console.log(heading);
+  if (heading === "img") {
+    createElement.src = content;
+  } else {
+    createElement.textContent = content;
+    createElement2.textContent = title;
+  }
+
+  container.appendChild(createElement);
+  container.appendChild(createElement2);
+};
+
+btnSearch.addEventListener("click", () => {
+  getCountryData();
+});

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Random color example — event handler attribute</title>
+    <style>
+      button {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="alert('Hello, this is my old-fashioned event handler!');">
+      Press me
+    </button>
+
+    <button>Change color</button>
+
+    <button>Display video</button>
+
+    <div class="hidden">
+      <video>
+        <source
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+          type="video/webm"
+        />
+        <p>
+          Your browser doesn't support HTML video. Here is a
+          <a href="rabbit320.mp4">link to the video</a> instead.
+        </p>
+      </video>
+    </div>
+
+    <script>
+      const btn = document.querySelector("button");
+      const btnVideo = document.querySelector("button");
+      const box = document.querySelector("div");
+      const video = document.querySelector("video");
+
+      function random(number) {
+        return Math.floor(Math.random() * (number + 1));
+      }
+
+      btn.addEventListener("click", () => {
+        const rndCol = `rgb(${random(255)}, ${random(255)}, ${random(255)})`;
+        document.body.style.backgroundColor = rndCol;
+      });
+      //
+      btnVideo.addEventListener("click", () => box.classList.remove("hidden"));
+      video.addEventListener("click", (event) => {
+        event.stopPropagation();
+        video.play();
+      });
+      box.addEventListener("click", () => box.classList.add("hidden"));
+    </script>
+  </body>
+</html>

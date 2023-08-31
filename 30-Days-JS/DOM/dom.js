@@ -52,7 +52,7 @@ document.addEventListener("keydown", function (e) {
     closeModal();
   }
 });
-*/
+
 
 // selecting elements
 
@@ -72,3 +72,32 @@ console.log(document.getElementsByClassName("btn"));
 
 const message = document.createElement("div");
 message.classList.add("cookie-message");
+*/
+
+const button = document.querySelector(".button");
+let clickCount = 0;
+
+button.addEventListener("click", () => {
+  clickCount++;
+  button.textContent = `Click count: ${clickCount}`;
+});
+
+button.addEventListener("click", () => {
+  button.textContent = "Ovo je promjena nakon klika";
+});
+
+// copy & paste for uppercase text
+let source = document.querySelector("div.source");
+
+source.addEventListener("copy", () => {
+  const selection = document.getSelection();
+  event.clipboardData.setData("text/plain", selection.toString().toUpperCase());
+  event.preventDefault();
+});
+
+// dblclick
+
+let card = document.querySelector(".card");
+card.addEventListener("dblclick", () => {
+  card.classList.toggle("large");
+});
