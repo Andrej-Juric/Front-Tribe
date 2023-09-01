@@ -8,19 +8,40 @@
     <link rel="stylesheet" href="./tabs.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="tab first">
-        <button>Tab 1</button>
-        <p>Tab Content</p>
+    <div class="tab-container">
+      <div class="tabs">
+        <button class="tab-button active" id="btn1">Galerry</button>
+        <button class="tab-button" id="btn2">About</button>
+        <button class="tab-button" id="btn3">Contact</button>
       </div>
-      <div class="tab second">
-        <button>Tab 2</button>
-        <p>Content for Tab</p>
-      </div>
-      <div class="tab third">
-        <button>Tab 3</button>
-        <p>Tab Content</p>
+      <div class="tab-content">
+        <div class="tab-section active" id="tab1">
+          <h2>Galerry</h2>
+          <p>This is section where you can see gallery</p>
+        </div>
+        <div class="tab-section" id="tab2">
+          <h2>About</h2>
+          <p>
+            We are professional photographers who enjoy capturing your moments
+            and preserving them forever
+          </p>
+        </div>
+        <div class="tab-section" id="tab3">
+          <h2>Contact</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book. It has survived not
+            only five centuries, but also the leap into electronic typesetting,
+            remaining essentially unchanged. It was popularised in the 1960s
+            with the release of Letraset sheets containing Lorem Ipsum passages,
+            and more recently with desktop publishing software like Aldus
+            PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
       </div>
     </div>
+    <script type="module" src="./tabs.js"></script>
   </body>
 </html>
